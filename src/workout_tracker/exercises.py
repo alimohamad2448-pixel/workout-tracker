@@ -52,4 +52,26 @@ class Exercise:
         # Use self.calculate_calories() to get the calories
         return f"{self.name}: {self.calculate_calories()} calories"
 
+class CardioExercises(Exercises):
+
+    def __init__(self, name: str, distance: float, duration: float, date: str = None)
+
+        super()__init__(name, "Running")
+        self.distance = distance
+        self.duration = duration
+
+
+    def calculate_calories(self):
+
+        calories = distance * 100
+            return calories
+
+    def get_duration(self):
+
+        return duration
+
+    def __str__(self):
+
+        return f"{self.name} ({self.distance, self.duration}): {self.calculate_calories()} calories"
+
 
