@@ -50,6 +50,6 @@ class Exercise:
         """Return a string representation of the exercise."""
         # TODO: Return a string like "ExerciseName: 100 calories"
         # Use self.calculate_calories() to get the calories
-        return f"ExerciseName: 100 calories"
+        return f"{self.name}: {self.calculate_calories()} calories"
 
 
