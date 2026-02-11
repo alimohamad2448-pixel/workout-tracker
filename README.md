@@ -1,2 +1,4 @@
 # workout-tracker
 OOP workout tracking system
+
+This system's foundation begins be defining what entails en exercise as a class. Followed by subclasses on what those exercises are. Within those subclasses, it dictates which subclass impacts exercise performance or effectiveness in calorie burning. Which is then spit out in a detailed summary of the exercise. The logging side stores any instance of a complete exercise, dictated by multiple arguements and attributes. Taking the results of multiple exercises and giving you an overall summary once you have finished logging multiple exercises in one session.
