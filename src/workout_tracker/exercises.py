@@ -101,4 +101,32 @@ class StrengthExercise(Exercise):
 
 
 class FlexibilityExercise(Exercise):
-    pass
+    INTENSITY_MULTIPLIERS = {
+        "low": 1.0,
+        "medium": 1.5,
+        "high": 2.0
+    }
+
+    def __init__(self, name: str, duration: float, intensity: str = "medium", date: str = None):
+        
+        super().__init__(name, date)
+
+        self.duration = duration
+
+        intensity = intensity.lower()
+        if intensity not in self.INTENSITY_MULTIPLIERS:
+            raise ValueError(
+                f"Invalid intensity '{intensity}'. Must be one of: low, medium, high"
+            )
+        self.intensity = intensity
+
+    def calculate_calories(self):
+        multiplier = self.INTENSITY_MULTIPLIERS[self.intensity]
+        return int(self.duration * 2.5 * multiplier)
+
+    def get_duration(self):
+        return self.duration
+
+    def __str__(self):
+        return f"{self.name} ({self.duration} min, {self.intensity} intensity): {self.calculate_calories()} calories"
+    
