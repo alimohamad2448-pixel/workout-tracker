@@ -6,6 +6,7 @@ from workout_tracker.exercises import (
     StrengthExercise,
     FlexibilityExercise
 )
+
 from workout_tracker.workout import Workout
 
 __version__ = "0.1.0"
