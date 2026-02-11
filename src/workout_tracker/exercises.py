@@ -20,6 +20,9 @@ class Exercise:
         """
         # TODO: Set self.name
         # TODO: Set self.date (use datetime.now().strftime("%Y-%m-%d") if date is None)
+        
+        if date is None:
+            datetime.now().strftime("%Y-%m-%d")
     
         self.name = name
         self.date = date 
@@ -75,3 +78,27 @@ class CardioExercise(Exercise):
         return f"{self.name} ({self.distance, self.duration}): {self.calculate_calories()} calories"
 
 
+class StrengthExercise(Exercise):
+    def __init__(self, name: str, weight: float, reps: int, sets: int, date: str = None):
+        
+        super().__init__(name, "Pull_ups")
+        self.weight = weight
+        self.reps = reps
+        self.sets = sets
+
+    def calculate_calories(self):
+        calories = self.weight * self.reps * self.sets * 0.05
+        return calories
+
+    def get_duration(self):
+        duration = self.sets * 3
+        return duration
+
+
+    def __str__(self):
+
+        return f"{self.name} ({self.weight} lbs x {self.reps} reps x {self.sets} sets): {self.calculate_calories()} calories"
+
+
+class FlexibilityExercise(Exercise):
+    pass
